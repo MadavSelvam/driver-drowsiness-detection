@@ -1,0 +1,436 @@
+sequence_index,filepath,label,predicted_class,confidence,fatigue_level,fatigue_score,window
+1,D:\driver-drowsiness-detection\dataset\train\yawn\543.jpg,3,no_yawn,0.6767968,Alert,0,1
+2,D:\driver-drowsiness-detection\dataset\train\Open\_179.jpg,1,Open,0.9899811,Alert,0,1
+3,D:\driver-drowsiness-detection\dataset\train\Open\_321.jpg,1,Open,0.98698574,Alert,0,1
+4,D:\driver-drowsiness-detection\dataset\train\yawn\188.jpg,3,no_yawn,0.5762439,Alert,0,1
+5,D:\driver-drowsiness-detection\dataset\train\no_yawn\1938.jpg,2,no_yawn,0.7395441,Alert,0,1
+6,D:\driver-drowsiness-detection\dataset\train\yawn\572.jpg,3,yawn,0.61527437,Mild Fatigue,1,1
+7,D:\driver-drowsiness-detection\dataset\train\Open\_379.jpg,1,Open,0.999984,Alert,0,1
+8,D:\driver-drowsiness-detection\dataset\train\Closed\_508.jpg,0,Closed,0.99154526,Severe Fatigue,2,1
+9,D:\driver-drowsiness-detection\dataset\train\Open\_655.jpg,1,Open,0.99565613,Alert,0,1
+10,D:\driver-drowsiness-detection\dataset\train\yawn\359.jpg,3,no_yawn,0.67489475,Alert,0,1
+11,D:\driver-drowsiness-detection\dataset\train\Open\_193.jpg,1,Closed,0.9521624,Severe Fatigue,2,1
+12,D:\driver-drowsiness-detection\dataset\train\Open\_270.jpg,1,Open,0.8921128,Alert,0,1
+13,D:\driver-drowsiness-detection\dataset\train\Closed\_681.jpg,0,Closed,0.7487673,Severe Fatigue,2,1
+14,D:\driver-drowsiness-detection\dataset\train\yawn\715.jpg,3,yawn,0.6888483,Mild Fatigue,1,1
+15,D:\driver-drowsiness-detection\dataset\train\no_yawn\2427.jpg,2,no_yawn,0.61104,Alert,0,1
+16,D:\driver-drowsiness-detection\dataset\train\yawn\358.jpg,3,no_yawn,0.61885333,Alert,0,1
+17,D:\driver-drowsiness-detection\dataset\train\Closed\_515.jpg,0,Closed,0.97537315,Severe Fatigue,2,1
+18,D:\driver-drowsiness-detection\dataset\train\yawn\120.jpg,3,no_yawn,0.79158455,Alert,0,1
+19,D:\driver-drowsiness-detection\dataset\train\Open\_474.jpg,1,Open,0.9967705,Alert,0,1
+20,D:\driver-drowsiness-detection\dataset\train\Closed\_702.jpg,0,Closed,0.81692195,Severe Fatigue,2,1
+21,D:\driver-drowsiness-detection\dataset\train\yawn\533.jpg,3,no_yawn,0.7259806,Alert,0,1
+22,D:\driver-drowsiness-detection\dataset\train\yawn\542.jpg,3,no_yawn,0.64883906,Alert,0,1
+23,D:\driver-drowsiness-detection\dataset\train\Closed\_269.jpg,0,Closed,0.96277726,Severe Fatigue,2,1
+24,D:\driver-drowsiness-detection\dataset\train\Open\_81.jpg,1,Open,0.8255079,Alert,0,1
+25,D:\driver-drowsiness-detection\dataset\train\yawn\332.jpg,3,no_yawn,0.69969445,Alert,0,1
+26,D:\driver-drowsiness-detection\dataset\train\yawn\636.jpg,3,no_yawn,0.67370415,Alert,0,1
+27,D:\driver-drowsiness-detection\dataset\train\Open\_604.jpg,1,Open,0.9999393,Alert,0,1
+28,D:\driver-drowsiness-detection\dataset\train\no_yawn\896.jpg,2,no_yawn,0.60837543,Alert,0,1
+29,D:\driver-drowsiness-detection\dataset\train\Closed\_428.jpg,0,Closed,0.8799944,Severe Fatigue,2,1
+30,D:\driver-drowsiness-detection\dataset\train\yawn\21.jpg,3,yawn,0.7179385,Mild Fatigue,1,1
+31,D:\driver-drowsiness-detection\dataset\train\Closed\_507.jpg,0,Closed,0.8724649,Severe Fatigue,2,2
+32,D:\driver-drowsiness-detection\dataset\train\Open\_570.jpg,1,Open,0.99994373,Alert,0,2
+33,D:\driver-drowsiness-detection\dataset\train\Open\_110.jpg,1,Open,0.95444536,Alert,0,2
+34,D:\driver-drowsiness-detection\dataset\train\yawn\711.jpg,3,yawn,0.84254575,Mild Fatigue,1,2
+35,D:\driver-drowsiness-detection\dataset\train\Closed\_696.jpg,0,Closed,0.9939663,Severe Fatigue,2,2
+36,D:\driver-drowsiness-detection\dataset\train\no_yawn\981.jpg,2,no_yawn,0.7780003,Alert,0,2
+37,D:\driver-drowsiness-detection\dataset\train\Open\_530.jpg,1,Open,0.9950139,Alert,0,2
+38,D:\driver-drowsiness-detection\dataset\train\yawn\321.jpg,3,no_yawn,0.63430685,Alert,0,2
+39,D:\driver-drowsiness-detection\dataset\train\yawn\683.jpg,3,yawn,0.84305686,Mild Fatigue,1,2
+40,D:\driver-drowsiness-detection\dataset\train\Open\_550.jpg,1,Open,0.99991786,Alert,0,2
+41,D:\driver-drowsiness-detection\dataset\train\Open\_128.jpg,1,Open,0.9987373,Alert,0,2
+42,D:\driver-drowsiness-detection\dataset\train\Open\_434.jpg,1,Open,0.99994147,Alert,0,2
+43,D:\driver-drowsiness-detection\dataset\train\Open\_66.jpg,1,Open,0.9954159,Alert,0,2
+44,D:\driver-drowsiness-detection\dataset\train\Closed\_719.jpg,0,Closed,0.9926162,Severe Fatigue,2,2
+45,D:\driver-drowsiness-detection\dataset\train\Closed\_9.jpg,0,Closed,0.9915767,Severe Fatigue,2,2
+46,D:\driver-drowsiness-detection\dataset\train\yawn\465.jpg,3,no_yawn,0.65206075,Alert,0,2
+47,D:\driver-drowsiness-detection\dataset\train\yawn\79.jpg,3,no_yawn,0.5994507,Alert,0,2
+48,D:\driver-drowsiness-detection\dataset\train\yawn\400.jpg,3,yawn,0.704304,Mild Fatigue,1,2
+49,D:\driver-drowsiness-detection\dataset\train\Closed\_94.jpg,0,Closed,0.8529557,Severe Fatigue,2,2
+50,D:\driver-drowsiness-detection\dataset\train\no_yawn\2622.jpg,2,no_yawn,0.68360287,Alert,0,2
+51,D:\driver-drowsiness-detection\dataset\train\Closed\_293.jpg,0,Closed,0.99405247,Severe Fatigue,2,2
+52,D:\driver-drowsiness-detection\dataset\train\no_yawn\2246.jpg,2,no_yawn,0.7326929,Alert,0,2
+53,D:\driver-drowsiness-detection\dataset\train\Closed\_602.jpg,0,Open,0.6489422,Alert,0,2
+54,D:\driver-drowsiness-detection\dataset\train\Closed\_578.jpg,0,Closed,0.99896157,Severe Fatigue,2,2
+55,D:\driver-drowsiness-detection\dataset\train\no_yawn\1857.jpg,2,no_yawn,0.6621439,Alert,0,2
+56,D:\driver-drowsiness-detection\dataset\train\Open\_190.jpg,1,Open,0.9985348,Alert,0,2
+57,D:\driver-drowsiness-detection\dataset\train\Open\_510.jpg,1,Open,0.99983895,Alert,0,2
+58,D:\driver-drowsiness-detection\dataset\train\Open\_186.jpg,1,Open,0.9741654,Alert,0,2
+59,D:\driver-drowsiness-detection\dataset\train\Closed\_207.jpg,0,Closed,0.9874148,Severe Fatigue,2,2
+60,D:\driver-drowsiness-detection\dataset\train\Closed\_614.jpg,0,Closed,0.84402657,Severe Fatigue,2,2
+61,D:\driver-drowsiness-detection\dataset\train\no_yawn\2134.jpg,2,no_yawn,0.65423954,Alert,0,3
+62,D:\driver-drowsiness-detection\dataset\train\yawn\306.jpg,3,no_yawn,0.58573693,Alert,0,3
+63,D:\driver-drowsiness-detection\dataset\train\no_yawn\1046.jpg,2,no_yawn,0.6488295,Alert,0,3
+64,D:\driver-drowsiness-detection\dataset\train\Closed\_98.jpg,0,Closed,0.9198992,Severe Fatigue,2,3
+65,D:\driver-drowsiness-detection\dataset\train\Open\_263.jpg,1,Open,0.9962722,Alert,0,3
+66,D:\driver-drowsiness-detection\dataset\train\yawn\17.jpg,3,yawn,0.78485537,Mild Fatigue,1,3
+67,D:\driver-drowsiness-detection\dataset\train\yawn\411.jpg,3,yawn,0.6524522,Mild Fatigue,1,3
+68,D:\driver-drowsiness-detection\dataset\train\Closed\_222.jpg,0,Closed,0.97747815,Severe Fatigue,2,3
+69,D:\driver-drowsiness-detection\dataset\train\Open\_391.jpg,1,Open,0.99957734,Alert,0,3
+70,D:\driver-drowsiness-detection\dataset\train\no_yawn\572.jpg,2,no_yawn,0.6264953,Alert,0,3
+71,D:\driver-drowsiness-detection\dataset\train\Closed\_376.jpg,0,Closed,0.95115817,Severe Fatigue,2,3
+72,D:\driver-drowsiness-detection\dataset\train\no_yawn\1893.jpg,2,no_yawn,0.75107473,Alert,0,3
+73,D:\driver-drowsiness-detection\dataset\train\Open\_693.jpg,1,Open,0.999828,Alert,0,3
+74,D:\driver-drowsiness-detection\dataset\train\no_yawn\1117.jpg,2,no_yawn,0.66517043,Alert,0,3
+75,D:\driver-drowsiness-detection\dataset\train\Open\_385.jpg,1,Open,0.99021554,Alert,0,3
+76,D:\driver-drowsiness-detection\dataset\train\no_yawn\1448.jpg,2,no_yawn,0.71687865,Alert,0,3
+77,D:\driver-drowsiness-detection\dataset\train\Closed\_711.jpg,0,Closed,0.9948447,Severe Fatigue,2,3
+78,D:\driver-drowsiness-detection\dataset\train\Closed\_617.jpg,0,Closed,0.9349781,Severe Fatigue,2,3
+79,D:\driver-drowsiness-detection\dataset\train\yawn\575.jpg,3,no_yawn,0.651246,Alert,0,3
+80,D:\driver-drowsiness-detection\dataset\train\no_yawn\529.jpg,2,no_yawn,0.735442,Alert,0,3
+81,D:\driver-drowsiness-detection\dataset\train\yawn\653.jpg,3,yawn,0.7847536,Mild Fatigue,1,3
+82,D:\driver-drowsiness-detection\dataset\train\yawn\661.jpg,3,no_yawn,0.6333786,Alert,0,3
+83,D:\driver-drowsiness-detection\dataset\train\no_yawn\1567.jpg,2,no_yawn,0.6570794,Alert,0,3
+84,D:\driver-drowsiness-detection\dataset\train\yawn\417.jpg,3,no_yawn,0.62753093,Alert,0,3
+85,D:\driver-drowsiness-detection\dataset\train\no_yawn\2583.jpg,2,no_yawn,0.62137514,Alert,0,3
+86,D:\driver-drowsiness-detection\dataset\train\yawn\406.jpg,3,yawn,0.6918194,Mild Fatigue,1,3
+87,D:\driver-drowsiness-detection\dataset\train\Closed\_219.jpg,0,Closed,0.98639596,Severe Fatigue,2,3
+88,D:\driver-drowsiness-detection\dataset\train\Open\_174.jpg,1,Open,0.9998486,Alert,0,3
+89,D:\driver-drowsiness-detection\dataset\train\Closed\_316.jpg,0,Closed,0.99416524,Severe Fatigue,2,3
+90,D:\driver-drowsiness-detection\dataset\train\Closed\_409.jpg,0,Closed,0.9930952,Severe Fatigue,2,3
+91,D:\driver-drowsiness-detection\dataset\train\Closed\_604.jpg,0,Closed,0.9942688,Severe Fatigue,2,4
+92,D:\driver-drowsiness-detection\dataset\train\yawn\253.jpg,3,yawn,0.7686922,Mild Fatigue,1,4
+93,D:\driver-drowsiness-detection\dataset\train\Open\_594.jpg,1,Open,0.9940253,Alert,0,4
+94,D:\driver-drowsiness-detection\dataset\train\no_yawn\1326.jpg,2,no_yawn,0.71456605,Alert,0,4
+95,D:\driver-drowsiness-detection\dataset\train\Open\_302.jpg,1,Open,0.9798083,Alert,0,4
+96,D:\driver-drowsiness-detection\dataset\train\no_yawn\71.jpg,2,no_yawn,0.5271896,Alert,0,4
+97,D:\driver-drowsiness-detection\dataset\train\Open\_78.jpg,1,Open,0.99843496,Alert,0,4
+98,D:\driver-drowsiness-detection\dataset\train\yawn\721.jpg,3,yawn,0.671537,Mild Fatigue,1,4
+99,D:\driver-drowsiness-detection\dataset\train\no_yawn\1462.jpg,2,no_yawn,0.6372491,Alert,0,4
+100,D:\driver-drowsiness-detection\dataset\train\no_yawn\175.jpg,2,no_yawn,0.6738875,Alert,0,4
+101,D:\driver-drowsiness-detection\dataset\train\yawn\86.jpg,3,yawn,0.811495,Mild Fatigue,1,4
+102,D:\driver-drowsiness-detection\dataset\train\Open\_597.jpg,1,Open,0.9986784,Alert,0,4
+103,D:\driver-drowsiness-detection\dataset\train\Open\_122.jpg,1,Open,0.99986196,Alert,0,4
+104,D:\driver-drowsiness-detection\dataset\train\no_yawn\1982.jpg,2,no_yawn,0.65224564,Alert,0,4
+105,D:\driver-drowsiness-detection\dataset\train\no_yawn\580.jpg,2,no_yawn,0.675857,Alert,0,4
+106,D:\driver-drowsiness-detection\dataset\train\no_yawn\2129.jpg,2,no_yawn,0.6481876,Alert,0,4
+107,D:\driver-drowsiness-detection\dataset\train\Closed\_447.jpg,0,Closed,0.69620526,Severe Fatigue,2,4
+108,D:\driver-drowsiness-detection\dataset\train\yawn\641.jpg,3,yawn,0.7101248,Mild Fatigue,1,4
+109,D:\driver-drowsiness-detection\dataset\train\yawn\620.jpg,3,no_yawn,0.57793885,Alert,0,4
+110,D:\driver-drowsiness-detection\dataset\train\no_yawn\2154.jpg,2,no_yawn,0.7588866,Alert,0,4
+111,D:\driver-drowsiness-detection\dataset\train\no_yawn\1114.jpg,2,no_yawn,0.685864,Alert,0,4
+112,D:\driver-drowsiness-detection\dataset\train\Closed\_490.jpg,0,Closed,0.9548109,Severe Fatigue,2,4
+113,D:\driver-drowsiness-detection\dataset\train\Open\_262.jpg,1,Open,0.999632,Alert,0,4
+114,D:\driver-drowsiness-detection\dataset\train\yawn\150.jpg,3,no_yawn,0.6880383,Alert,0,4
+115,D:\driver-drowsiness-detection\dataset\train\yawn\376.jpg,3,no_yawn,0.637062,Alert,0,4
+116,D:\driver-drowsiness-detection\dataset\train\Open\_448.jpg,1,Open,0.999343,Alert,0,4
+117,D:\driver-drowsiness-detection\dataset\train\yawn\680.jpg,3,yawn,0.8509523,Mild Fatigue,1,4
+118,D:\driver-drowsiness-detection\dataset\train\yawn\592.jpg,3,no_yawn,0.61550516,Alert,0,4
+119,D:\driver-drowsiness-detection\dataset\train\Open\_228.jpg,1,Open,0.9994734,Alert,0,4
+120,D:\driver-drowsiness-detection\dataset\train\yawn\173.jpg,3,yawn,0.81174594,Mild Fatigue,1,4
+121,D:\driver-drowsiness-detection\dataset\train\Open\_480.jpg,1,Open,0.99483335,Alert,0,5
+122,D:\driver-drowsiness-detection\dataset\train\yawn\603.jpg,3,no_yawn,0.5325953,Alert,0,5
+123,D:\driver-drowsiness-detection\dataset\train\no_yawn\1852.jpg,2,no_yawn,0.66806793,Alert,0,5
+124,D:\driver-drowsiness-detection\dataset\train\no_yawn\2133.jpg,2,no_yawn,0.65880615,Alert,0,5
+125,D:\driver-drowsiness-detection\dataset\train\Closed\_558.jpg,0,Closed,0.9731203,Severe Fatigue,2,5
+126,D:\driver-drowsiness-detection\dataset\train\Open\_292.jpg,1,Open,0.999982,Alert,0,5
+127,D:\driver-drowsiness-detection\dataset\train\no_yawn\1817.jpg,2,no_yawn,0.7783635,Alert,0,5
+128,D:\driver-drowsiness-detection\dataset\train\Closed\_410.jpg,0,Closed,0.99706084,Severe Fatigue,2,5
+129,D:\driver-drowsiness-detection\dataset\train\Closed\_188.jpg,0,Closed,0.9926765,Severe Fatigue,2,5
+130,D:\driver-drowsiness-detection\dataset\train\Open\_223.jpg,1,Open,0.997767,Alert,0,5
+131,D:\driver-drowsiness-detection\dataset\train\no_yawn\555.jpg,2,no_yawn,0.6966947,Alert,0,5
+132,D:\driver-drowsiness-detection\dataset\train\yawn\302.jpg,3,yawn,0.50418943,Mild Fatigue,1,5
+133,D:\driver-drowsiness-detection\dataset\train\Closed\_548.jpg,0,Closed,0.8340663,Severe Fatigue,2,5
+134,D:\driver-drowsiness-detection\dataset\train\Closed\_242.jpg,0,Closed,0.998374,Severe Fatigue,2,5
+135,D:\driver-drowsiness-detection\dataset\train\Closed\_294.jpg,0,Closed,0.9891828,Severe Fatigue,2,5
+136,D:\driver-drowsiness-detection\dataset\train\Open\_120.jpg,1,Open,0.9636111,Alert,0,5
+137,D:\driver-drowsiness-detection\dataset\train\yawn\32.jpg,3,yawn,0.71191525,Mild Fatigue,1,5
+138,D:\driver-drowsiness-detection\dataset\train\yawn\159.jpg,3,yawn,0.7563964,Mild Fatigue,1,5
+139,D:\driver-drowsiness-detection\dataset\train\yawn\667.jpg,3,no_yawn,0.6682781,Alert,0,5
+140,D:\driver-drowsiness-detection\dataset\train\yawn\562.jpg,3,no_yawn,0.54757947,Alert,0,5
+141,D:\driver-drowsiness-detection\dataset\train\Open\_450.jpg,1,Open,0.9999739,Alert,0,5
+142,D:\driver-drowsiness-detection\dataset\train\no_yawn\98.jpg,2,no_yawn,0.6710568,Alert,0,5
+143,D:\driver-drowsiness-detection\dataset\train\yawn\313.jpg,3,no_yawn,0.6165976,Alert,0,5
+144,D:\driver-drowsiness-detection\dataset\train\Closed\_433.jpg,0,Closed,0.79091644,Severe Fatigue,2,5
+145,D:\driver-drowsiness-detection\dataset\train\Closed\_570.jpg,0,Closed,0.9396218,Severe Fatigue,2,5
+146,D:\driver-drowsiness-detection\dataset\train\no_yawn\2074.jpg,2,no_yawn,0.50642645,Alert,0,5
+147,D:\driver-drowsiness-detection\dataset\train\no_yawn\29.jpg,2,no_yawn,0.58132815,Alert,0,5
+148,D:\driver-drowsiness-detection\dataset\train\yawn\316.jpg,3,no_yawn,0.71512526,Alert,0,5
+149,D:\driver-drowsiness-detection\dataset\train\no_yawn\2532.jpg,2,no_yawn,0.61469,Alert,0,5
+150,D:\driver-drowsiness-detection\dataset\train\Open\_165.jpg,1,Open,0.9997639,Alert,0,5
+151,D:\driver-drowsiness-detection\dataset\train\Closed\_362.jpg,0,Closed,0.97228754,Severe Fatigue,2,6
+152,D:\driver-drowsiness-detection\dataset\train\Closed\_241.jpg,0,Closed,0.89194596,Severe Fatigue,2,6
+153,D:\driver-drowsiness-detection\dataset\train\Closed\_631.jpg,0,Closed,0.97588253,Severe Fatigue,2,6
+154,D:\driver-drowsiness-detection\dataset\train\no_yawn\573.jpg,2,no_yawn,0.61726534,Alert,0,6
+155,D:\driver-drowsiness-detection\dataset\train\Open\_210.jpg,1,Open,0.99686533,Alert,0,6
+156,D:\driver-drowsiness-detection\dataset\train\no_yawn\1319.jpg,2,no_yawn,0.74245375,Alert,0,6
+157,D:\driver-drowsiness-detection\dataset\train\Open\_203.jpg,1,Open,0.999998,Alert,0,6
+158,D:\driver-drowsiness-detection\dataset\train\Closed\_596.jpg,0,Closed,0.988704,Severe Fatigue,2,6
+159,D:\driver-drowsiness-detection\dataset\train\yawn\485.jpg,3,no_yawn,0.704495,Alert,0,6
+160,D:\driver-drowsiness-detection\dataset\train\yawn\707.jpg,3,no_yawn,0.63166136,Alert,0,6
+161,D:\driver-drowsiness-detection\dataset\train\yawn\625.jpg,3,no_yawn,0.5844866,Alert,0,6
+162,D:\driver-drowsiness-detection\dataset\train\no_yawn\976.jpg,2,no_yawn,0.7045776,Alert,0,6
+163,D:\driver-drowsiness-detection\dataset\train\Closed\_352.jpg,0,Closed,0.9988444,Severe Fatigue,2,6
+164,D:\driver-drowsiness-detection\dataset\train\Open\_577.jpg,1,Open,0.98748195,Alert,0,6
+165,D:\driver-drowsiness-detection\dataset\train\no_yawn\1333.jpg,2,no_yawn,0.6330731,Alert,0,6
+166,D:\driver-drowsiness-detection\dataset\train\Closed\_534.jpg,0,Closed,0.9834737,Severe Fatigue,2,6
+167,D:\driver-drowsiness-detection\dataset\train\Closed\_214.jpg,0,Closed,0.9920402,Severe Fatigue,2,6
+168,D:\driver-drowsiness-detection\dataset\train\yawn\512.jpg,3,no_yawn,0.6348307,Alert,0,6
+169,D:\driver-drowsiness-detection\dataset\train\Open\_132.jpg,1,Open,0.99743146,Alert,0,6
+170,D:\driver-drowsiness-detection\dataset\train\no_yawn\291.jpg,2,no_yawn,0.7058208,Alert,0,6
+171,D:\driver-drowsiness-detection\dataset\train\Closed\_401.jpg,0,Closed,0.84562206,Severe Fatigue,2,6
+172,D:\driver-drowsiness-detection\dataset\train\Closed\_557.jpg,0,Closed,0.87770194,Severe Fatigue,2,6
+173,D:\driver-drowsiness-detection\dataset\train\Open\_50.jpg,1,Open,0.99984205,Alert,0,6
+174,D:\driver-drowsiness-detection\dataset\train\Open\_553.jpg,1,Open,0.99568766,Alert,0,6
+175,D:\driver-drowsiness-detection\dataset\train\Open\_4.jpg,1,Open,0.9993199,Alert,0,6
+176,D:\driver-drowsiness-detection\dataset\train\Closed\_101.jpg,0,Closed,0.9665825,Severe Fatigue,2,6
+177,D:\driver-drowsiness-detection\dataset\train\Open\_98.jpg,1,Open,0.99988246,Alert,0,6
+178,D:\driver-drowsiness-detection\dataset\train\Open\_412.jpg,1,Open,0.9987691,Alert,0,6
+179,D:\driver-drowsiness-detection\dataset\train\Closed\_407.jpg,0,Closed,0.9969247,Severe Fatigue,2,6
+180,D:\driver-drowsiness-detection\dataset\train\no_yawn\2068.jpg,2,yawn,0.5186542,Mild Fatigue,1,6
+181,D:\driver-drowsiness-detection\dataset\train\Closed\_639.jpg,0,Closed,0.96458155,Severe Fatigue,2,7
+182,D:\driver-drowsiness-detection\dataset\train\yawn\454.jpg,3,no_yawn,0.6104181,Alert,0,7
+183,D:\driver-drowsiness-detection\dataset\train\Open\_196.jpg,1,Open,0.99895227,Alert,0,7
+184,D:\driver-drowsiness-detection\dataset\train\yawn\311.jpg,3,no_yawn,0.63633996,Alert,0,7
+185,D:\driver-drowsiness-detection\dataset\train\Closed\_308.jpg,0,Closed,0.99933845,Severe Fatigue,2,7
+186,D:\driver-drowsiness-detection\dataset\train\Open\_143.jpg,1,Open,0.99846953,Alert,0,7
+187,D:\driver-drowsiness-detection\dataset\train\Closed\_680.jpg,0,Closed,0.9986192,Severe Fatigue,2,7
+188,D:\driver-drowsiness-detection\dataset\train\Closed\_391.jpg,0,Closed,0.8878544,Severe Fatigue,2,7
+189,D:\driver-drowsiness-detection\dataset\train\yawn\531.jpg,3,no_yawn,0.74571615,Alert,0,7
+190,D:\driver-drowsiness-detection\dataset\train\Closed\_270.jpg,0,Closed,0.9706002,Severe Fatigue,2,7
+191,D:\driver-drowsiness-detection\dataset\train\no_yawn\1044.jpg,2,no_yawn,0.6174496,Alert,0,7
+192,D:\driver-drowsiness-detection\dataset\train\Open\_252.jpg,1,Open,0.9957207,Alert,0,7
+193,D:\driver-drowsiness-detection\dataset\train\no_yawn\964.jpg,2,no_yawn,0.6807558,Alert,0,7
+194,D:\driver-drowsiness-detection\dataset\train\Closed\_437.jpg,0,Closed,0.9778246,Severe Fatigue,2,7
+195,D:\driver-drowsiness-detection\dataset\train\Open\_220.jpg,1,Open,0.9804052,Alert,0,7
+196,D:\driver-drowsiness-detection\dataset\train\yawn\275.jpg,3,no_yawn,0.76011926,Alert,0,7
+197,D:\driver-drowsiness-detection\dataset\train\Open\_2.jpg,1,Open,0.99061245,Alert,0,7
+198,D:\driver-drowsiness-detection\dataset\train\no_yawn\2476.jpg,2,no_yawn,0.67154783,Alert,0,7
+199,D:\driver-drowsiness-detection\dataset\train\yawn\588.jpg,3,no_yawn,0.6760248,Alert,0,7
+200,D:\driver-drowsiness-detection\dataset\train\Closed\_608.jpg,0,Closed,0.99871266,Severe Fatigue,2,7
+201,D:\driver-drowsiness-detection\dataset\train\no_yawn\2196.jpg,2,no_yawn,0.6881954,Alert,0,7
+202,D:\driver-drowsiness-detection\dataset\train\no_yawn\1871.jpg,2,no_yawn,0.68399996,Alert,0,7
+203,D:\driver-drowsiness-detection\dataset\train\Closed\_193.jpg,0,Closed,0.8425998,Severe Fatigue,2,7
+204,D:\driver-drowsiness-detection\dataset\train\yawn\594.jpg,3,no_yawn,0.63626766,Alert,0,7
+205,D:\driver-drowsiness-detection\dataset\train\Open\_284.jpg,1,Open,0.9970439,Alert,0,7
+206,D:\driver-drowsiness-detection\dataset\train\no_yawn\755.jpg,2,no_yawn,0.6878555,Alert,0,7
+207,D:\driver-drowsiness-detection\dataset\train\yawn\395.jpg,3,yawn,0.7118711,Mild Fatigue,1,7
+208,D:\driver-drowsiness-detection\dataset\train\no_yawn\1176.jpg,2,no_yawn,0.6471705,Alert,0,7
+209,D:\driver-drowsiness-detection\dataset\train\Closed\_6.jpg,0,Closed,0.9727079,Severe Fatigue,2,7
+210,D:\driver-drowsiness-detection\dataset\train\Open\_158.jpg,1,Open,0.7516628,Alert,0,7
+211,D:\driver-drowsiness-detection\dataset\train\Closed\_523.jpg,0,Closed,0.9453996,Severe Fatigue,2,8
+212,D:\driver-drowsiness-detection\dataset\train\yawn\628.jpg,3,no_yawn,0.6330428,Alert,0,8
+213,D:\driver-drowsiness-detection\dataset\train\yawn\442.jpg,3,no_yawn,0.6670165,Alert,0,8
+214,D:\driver-drowsiness-detection\dataset\train\yawn\335.jpg,3,no_yawn,0.7316652,Alert,0,8
+215,D:\driver-drowsiness-detection\dataset\train\no_yawn\2483.jpg,2,no_yawn,0.5848983,Alert,0,8
+216,D:\driver-drowsiness-detection\dataset\train\Closed\_384.jpg,0,Closed,0.76816356,Severe Fatigue,2,8
+217,D:\driver-drowsiness-detection\dataset\train\no_yawn\1559.jpg,2,no_yawn,0.7701225,Alert,0,8
+218,D:\driver-drowsiness-detection\dataset\train\yawn\184.jpg,3,no_yawn,0.5853926,Alert,0,8
+219,D:\driver-drowsiness-detection\dataset\train\Open\_492.jpg,1,Open,0.99796665,Alert,0,8
+220,D:\driver-drowsiness-detection\dataset\train\no_yawn\2229.jpg,2,no_yawn,0.61400425,Alert,0,8
+221,D:\driver-drowsiness-detection\dataset\train\Closed\_134.jpg,0,Closed,0.929649,Severe Fatigue,2,8
+222,D:\driver-drowsiness-detection\dataset\train\Open\_57.jpg,1,Open,0.99275416,Alert,0,8
+223,D:\driver-drowsiness-detection\dataset\train\yawn\578.jpg,3,no_yawn,0.6306289,Alert,0,8
+224,D:\driver-drowsiness-detection\dataset\train\yawn\318.jpg,3,no_yawn,0.7323876,Alert,0,8
+225,D:\driver-drowsiness-detection\dataset\train\Open\_517.jpg,1,Open,0.99851686,Alert,0,8
+226,D:\driver-drowsiness-detection\dataset\train\no_yawn\2408.jpg,2,no_yawn,0.5944545,Alert,0,8
+227,D:\driver-drowsiness-detection\dataset\train\no_yawn\897.jpg,2,no_yawn,0.6438986,Alert,0,8
+228,D:\driver-drowsiness-detection\dataset\train\Open\_102.jpg,1,Open,0.99907255,Alert,0,8
+229,D:\driver-drowsiness-detection\dataset\train\Open\_677.jpg,1,Open,0.999446,Alert,0,8
+230,D:\driver-drowsiness-detection\dataset\train\Open\_689.jpg,1,Open,0.99966574,Alert,0,8
+231,D:\driver-drowsiness-detection\dataset\train\no_yawn\501.jpg,2,no_yawn,0.716122,Alert,0,8
+232,D:\driver-drowsiness-detection\dataset\train\yawn\338.jpg,3,no_yawn,0.6638381,Alert,0,8
+233,D:\driver-drowsiness-detection\dataset\train\Closed\_712.jpg,0,Closed,0.96715385,Severe Fatigue,2,8
+234,D:\driver-drowsiness-detection\dataset\train\Closed\_590.jpg,0,Closed,0.99747145,Severe Fatigue,2,8
+235,D:\driver-drowsiness-detection\dataset\train\Closed\_471.jpg,0,Closed,0.93688315,Severe Fatigue,2,8
+236,D:\driver-drowsiness-detection\dataset\train\no_yawn\2217.jpg,2,no_yawn,0.6133043,Alert,0,8
+237,D:\driver-drowsiness-detection\dataset\train\no_yawn\99.jpg,2,no_yawn,0.68643,Alert,0,8
+238,D:\driver-drowsiness-detection\dataset\train\yawn\161.jpg,3,yawn,0.81816113,Mild Fatigue,1,8
+239,D:\driver-drowsiness-detection\dataset\train\no_yawn\1538.jpg,2,no_yawn,0.7014858,Alert,0,8
+240,D:\driver-drowsiness-detection\dataset\train\no_yawn\502.jpg,2,no_yawn,0.7422786,Alert,0,8
+241,D:\driver-drowsiness-detection\dataset\train\Closed\_464.jpg,0,Closed,0.8531775,Severe Fatigue,2,9
+242,D:\driver-drowsiness-detection\dataset\train\Closed\_511.jpg,0,Closed,0.9987565,Severe Fatigue,2,9
+243,D:\driver-drowsiness-detection\dataset\train\Open\_501.jpg,1,Open,0.99414414,Alert,0,9
+244,D:\driver-drowsiness-detection\dataset\train\no_yawn\1487.jpg,2,no_yawn,0.70702565,Alert,0,9
+245,D:\driver-drowsiness-detection\dataset\train\no_yawn\73.jpg,2,no_yawn,0.5356886,Alert,0,9
+246,D:\driver-drowsiness-detection\dataset\train\Open\_106.jpg,1,Open,0.9997261,Alert,0,9
+247,D:\driver-drowsiness-detection\dataset\train\Open\_5.jpg,1,Open,0.99955136,Alert,0,9
+248,D:\driver-drowsiness-detection\dataset\train\yawn\423.jpg,3,yawn,0.6593481,Mild Fatigue,1,9
+249,D:\driver-drowsiness-detection\dataset\train\no_yawn\313.jpg,2,no_yawn,0.5667872,Alert,0,9
+250,D:\driver-drowsiness-detection\dataset\train\Closed\_230.jpg,0,Closed,0.9279517,Severe Fatigue,2,9
+251,D:\driver-drowsiness-detection\dataset\train\Closed\_76.jpg,0,Closed,0.98672694,Severe Fatigue,2,9
+252,D:\driver-drowsiness-detection\dataset\train\Open\_80.jpg,1,Open,0.9997079,Alert,0,9
+253,D:\driver-drowsiness-detection\dataset\train\yawn\284.jpg,3,no_yawn,0.7645827,Alert,0,9
+254,D:\driver-drowsiness-detection\dataset\train\no_yawn\2330.jpg,2,no_yawn,0.6294409,Alert,0,9
+255,D:\driver-drowsiness-detection\dataset\train\yawn\50.jpg,3,no_yawn,0.58882666,Alert,0,9
+256,D:\driver-drowsiness-detection\dataset\train\Closed\_284.jpg,0,Closed,0.9986725,Severe Fatigue,2,9
+257,D:\driver-drowsiness-detection\dataset\train\Closed\_714.jpg,0,Closed,0.9620711,Severe Fatigue,2,9
+258,D:\driver-drowsiness-detection\dataset\train\yawn\192.jpg,3,yawn,0.5248291,Mild Fatigue,1,9
+259,D:\driver-drowsiness-detection\dataset\train\Closed\_11.jpg,0,Closed,0.9982035,Severe Fatigue,2,9
+260,D:\driver-drowsiness-detection\dataset\train\yawn\271.jpg,3,no_yawn,0.60262316,Alert,0,9
+261,D:\driver-drowsiness-detection\dataset\train\no_yawn\2462.jpg,2,no_yawn,0.7213943,Alert,0,9
+262,D:\driver-drowsiness-detection\dataset\train\Closed\_678.jpg,0,Closed,0.9953922,Severe Fatigue,2,9
+263,D:\driver-drowsiness-detection\dataset\train\yawn\509.jpg,3,no_yawn,0.6215242,Alert,0,9
+264,D:\driver-drowsiness-detection\dataset\train\yawn\20.jpg,3,yawn,0.73783195,Mild Fatigue,1,9
+265,D:\driver-drowsiness-detection\dataset\train\no_yawn\853.jpg,2,no_yawn,0.6472416,Alert,0,9
+266,D:\driver-drowsiness-detection\dataset\train\Closed\_227.jpg,0,Closed,0.92532647,Severe Fatigue,2,9
+267,D:\driver-drowsiness-detection\dataset\train\yawn\67.jpg,3,no_yawn,0.54933536,Alert,0,9
+268,D:\driver-drowsiness-detection\dataset\train\yawn\27.jpg,3,yawn,0.7316375,Mild Fatigue,1,9
+269,D:\driver-drowsiness-detection\dataset\train\yawn\203.jpg,3,no_yawn,0.69904524,Alert,0,9
+270,D:\driver-drowsiness-detection\dataset\train\yawn\157.jpg,3,yawn,0.85650986,Mild Fatigue,1,9
+271,D:\driver-drowsiness-detection\dataset\train\Open\_339.jpg,1,Open,0.98991907,Alert,0,10
+272,D:\driver-drowsiness-detection\dataset\train\yawn\75.jpg,3,yawn,0.8729195,Mild Fatigue,1,10
+273,D:\driver-drowsiness-detection\dataset\train\yawn\117.jpg,3,no_yawn,0.7850442,Alert,0,10
+274,D:\driver-drowsiness-detection\dataset\train\Open\_421.jpg,1,Open,0.98871094,Alert,0,10
+275,D:\driver-drowsiness-detection\dataset\train\Open\_282.jpg,1,Open,0.9995567,Alert,0,10
+276,D:\driver-drowsiness-detection\dataset\train\Open\_358.jpg,1,Open,0.99764144,Alert,0,10
+277,D:\driver-drowsiness-detection\dataset\train\Open\_305.jpg,1,Open,0.9819572,Alert,0,10
+278,D:\driver-drowsiness-detection\dataset\train\Closed\_154.jpg,0,Closed,0.95265657,Severe Fatigue,2,10
+279,D:\driver-drowsiness-detection\dataset\train\Open\_654.jpg,1,Open,0.9718617,Alert,0,10
+280,D:\driver-drowsiness-detection\dataset\train\Closed\_658.jpg,0,Closed,0.99206614,Severe Fatigue,2,10
+281,D:\driver-drowsiness-detection\dataset\train\yawn\213.jpg,3,no_yawn,0.691322,Alert,0,10
+282,D:\driver-drowsiness-detection\dataset\train\yawn\8.jpg,3,yawn,0.803791,Mild Fatigue,1,10
+283,D:\driver-drowsiness-detection\dataset\train\no_yawn\793.jpg,2,no_yawn,0.58068985,Alert,0,10
+284,D:\driver-drowsiness-detection\dataset\train\no_yawn\316.jpg,2,no_yawn,0.53908044,Alert,0,10
+285,D:\driver-drowsiness-detection\dataset\train\Open\_289.jpg,1,Open,0.99998283,Alert,0,10
+286,D:\driver-drowsiness-detection\dataset\train\no_yawn\1948.jpg,2,no_yawn,0.75484306,Alert,0,10
+287,D:\driver-drowsiness-detection\dataset\train\no_yawn\507.jpg,2,no_yawn,0.6902052,Alert,0,10
+288,D:\driver-drowsiness-detection\dataset\train\yawn\327.jpg,3,no_yawn,0.72388095,Alert,0,10
+289,D:\driver-drowsiness-detection\dataset\train\no_yawn\2434.jpg,2,no_yawn,0.67849016,Alert,0,10
+290,D:\driver-drowsiness-detection\dataset\train\no_yawn\1459.jpg,2,no_yawn,0.6333466,Alert,0,10
+291,D:\driver-drowsiness-detection\dataset\train\Closed\_110.jpg,0,Closed,0.93974537,Severe Fatigue,2,10
+292,D:\driver-drowsiness-detection\dataset\train\no_yawn\380.jpg,2,no_yawn,0.67517906,Alert,0,10
+293,D:\driver-drowsiness-detection\dataset\train\Open\_0.jpg,1,Open,0.9988978,Alert,0,10
+294,D:\driver-drowsiness-detection\dataset\train\no_yawn\547.jpg,2,no_yawn,0.7131518,Alert,0,10
+295,D:\driver-drowsiness-detection\dataset\train\no_yawn\884.jpg,2,no_yawn,0.616703,Alert,0,10
+296,D:\driver-drowsiness-detection\dataset\train\no_yawn\420.jpg,2,no_yawn,0.72631913,Alert,0,10
+297,D:\driver-drowsiness-detection\dataset\train\Closed\_266.jpg,0,Closed,0.9961314,Severe Fatigue,2,10
+298,D:\driver-drowsiness-detection\dataset\train\Open\_330.jpg,1,Open,0.99637294,Alert,0,10
+299,D:\driver-drowsiness-detection\dataset\train\yawn\249.jpg,3,no_yawn,0.5834146,Alert,0,10
+300,D:\driver-drowsiness-detection\dataset\train\no_yawn\1599.jpg,2,no_yawn,0.75820297,Alert,0,10
+301,D:\driver-drowsiness-detection\dataset\train\yawn\446.jpg,3,no_yawn,0.7378231,Alert,0,11
+302,D:\driver-drowsiness-detection\dataset\train\Open\_43.jpg,1,Open,0.99697673,Alert,0,11
+303,D:\driver-drowsiness-detection\dataset\train\Open\_399.jpg,1,Open,0.8923155,Alert,0,11
+304,D:\driver-drowsiness-detection\dataset\train\Closed\_545.jpg,0,Closed,0.9936237,Severe Fatigue,2,11
+305,D:\driver-drowsiness-detection\dataset\train\Closed\_127.jpg,0,Closed,0.9964307,Severe Fatigue,2,11
+306,D:\driver-drowsiness-detection\dataset\train\yawn\19.jpg,3,yawn,0.8069897,Mild Fatigue,1,11
+307,D:\driver-drowsiness-detection\dataset\train\Open\_307.jpg,1,Open,0.9989537,Alert,0,11
+308,D:\driver-drowsiness-detection\dataset\train\Open\_579.jpg,1,Open,0.99834645,Alert,0,11
+309,D:\driver-drowsiness-detection\dataset\train\no_yawn\1576.jpg,2,no_yawn,0.6597496,Alert,0,11
+310,D:\driver-drowsiness-detection\dataset\train\yawn\232.jpg,3,no_yawn,0.589553,Alert,0,11
+311,D:\driver-drowsiness-detection\dataset\train\yawn\312.jpg,3,no_yawn,0.653682,Alert,0,11
+312,D:\driver-drowsiness-detection\dataset\train\no_yawn\898.jpg,2,no_yawn,0.6458448,Alert,0,11
+313,D:\driver-drowsiness-detection\dataset\train\Open\_299.jpg,1,Open,0.99996567,Alert,0,11
+314,D:\driver-drowsiness-detection\dataset\train\yawn\659.jpg,3,yawn,0.75493914,Mild Fatigue,1,11
+315,D:\driver-drowsiness-detection\dataset\train\yawn\254.jpg,3,yawn,0.7700336,Mild Fatigue,1,11
+316,D:\driver-drowsiness-detection\dataset\train\Open\_581.jpg,1,Open,0.9999076,Alert,0,11
+317,D:\driver-drowsiness-detection\dataset\train\Closed\_396.jpg,0,Closed,0.9958014,Severe Fatigue,2,11
+318,D:\driver-drowsiness-detection\dataset\train\no_yawn\551.jpg,2,no_yawn,0.6704811,Alert,0,11
+319,D:\driver-drowsiness-detection\dataset\train\Closed\_460.jpg,0,Closed,0.843358,Severe Fatigue,2,11
+320,D:\driver-drowsiness-detection\dataset\train\no_yawn\1738.jpg,2,no_yawn,0.68426955,Alert,0,11
+321,D:\driver-drowsiness-detection\dataset\train\Closed\_510.jpg,0,Closed,0.95639724,Severe Fatigue,2,11
+322,D:\driver-drowsiness-detection\dataset\train\yawn\583.jpg,3,no_yawn,0.7200662,Alert,0,11
+323,D:\driver-drowsiness-detection\dataset\train\no_yawn\141.jpg,2,no_yawn,0.71005833,Alert,0,11
+324,D:\driver-drowsiness-detection\dataset\train\Open\_613.jpg,1,Open,0.9964224,Alert,0,11
+325,D:\driver-drowsiness-detection\dataset\train\Open\_653.jpg,1,Open,0.98792356,Alert,0,11
+326,D:\driver-drowsiness-detection\dataset\train\Closed\_451.jpg,0,Closed,0.9779569,Severe Fatigue,2,11
+327,D:\driver-drowsiness-detection\dataset\train\Open\_181.jpg,1,Open,0.98043925,Alert,0,11
+328,D:\driver-drowsiness-detection\dataset\train\no_yawn\1937.jpg,2,no_yawn,0.7529268,Alert,0,11
+329,D:\driver-drowsiness-detection\dataset\train\yawn\549.jpg,3,no_yawn,0.52331275,Alert,0,11
+330,D:\driver-drowsiness-detection\dataset\train\Closed\_597.jpg,0,Closed,0.95819783,Severe Fatigue,2,11
+331,D:\driver-drowsiness-detection\dataset\train\yawn\260.jpg,3,yawn,0.8245454,Mild Fatigue,1,12
+332,D:\driver-drowsiness-detection\dataset\train\Open\_217.jpg,1,Open,0.9984426,Alert,0,12
+333,D:\driver-drowsiness-detection\dataset\train\Closed\_701.jpg,0,Closed,0.99425745,Severe Fatigue,2,12
+334,D:\driver-drowsiness-detection\dataset\train\no_yawn\2513.jpg,2,no_yawn,0.6961791,Alert,0,12
+335,D:\driver-drowsiness-detection\dataset\train\no_yawn\2496.jpg,2,no_yawn,0.6383146,Alert,0,12
+336,D:\driver-drowsiness-detection\dataset\train\Closed\_307.jpg,0,Closed,0.9849311,Severe Fatigue,2,12
+337,D:\driver-drowsiness-detection\dataset\train\Closed\_446.jpg,0,Closed,0.8406084,Severe Fatigue,2,12
+338,D:\driver-drowsiness-detection\dataset\train\Closed\_175.jpg,0,Closed,0.9774541,Severe Fatigue,2,12
+339,D:\driver-drowsiness-detection\dataset\train\Open\_322.jpg,1,Open,0.9996321,Alert,0,12
+340,D:\driver-drowsiness-detection\dataset\train\yawn\674.jpg,3,no_yawn,0.6159138,Alert,0,12
+341,D:\driver-drowsiness-detection\dataset\train\Closed\_84.jpg,0,Closed,0.99927026,Severe Fatigue,2,12
+342,D:\driver-drowsiness-detection\dataset\train\yawn\95.jpg,3,yawn,0.8184429,Mild Fatigue,1,12
+343,D:\driver-drowsiness-detection\dataset\train\Open\_725.jpg,1,Open,0.9993961,Alert,0,12
+344,D:\driver-drowsiness-detection\dataset\train\Open\_103.jpg,1,Open,0.99930453,Alert,0,12
+345,D:\driver-drowsiness-detection\dataset\train\Open\_618.jpg,1,Open,0.99975604,Alert,0,12
+346,D:\driver-drowsiness-detection\dataset\train\Closed\_538.jpg,0,Closed,0.94654584,Severe Fatigue,2,12
+347,D:\driver-drowsiness-detection\dataset\train\yawn\402.jpg,3,yawn,0.6761003,Mild Fatigue,1,12
+348,D:\driver-drowsiness-detection\dataset\train\no_yawn\7.jpg,2,no_yawn,0.69544494,Alert,0,12
+349,D:\driver-drowsiness-detection\dataset\train\yawn\246.jpg,3,yawn,0.5734019,Mild Fatigue,1,12
+350,D:\driver-drowsiness-detection\dataset\train\Open\_622.jpg,1,Open,0.9971916,Alert,0,12
+351,D:\driver-drowsiness-detection\dataset\train\Closed\_248.jpg,0,Closed,0.99629265,Severe Fatigue,2,12
+352,D:\driver-drowsiness-detection\dataset\train\no_yawn\2283.jpg,2,no_yawn,0.63782203,Alert,0,12
+353,D:\driver-drowsiness-detection\dataset\train\yawn\557.jpg,3,yawn,0.75593126,Mild Fatigue,1,12
+354,D:\driver-drowsiness-detection\dataset\train\no_yawn\1009.jpg,2,no_yawn,0.73444796,Alert,0,12
+355,D:\driver-drowsiness-detection\dataset\train\no_yawn\437.jpg,2,no_yawn,0.6551679,Alert,0,12
+356,D:\driver-drowsiness-detection\dataset\train\Closed\_65.jpg,0,Closed,0.8774661,Severe Fatigue,2,12
+357,D:\driver-drowsiness-detection\dataset\train\yawn\357.jpg,3,no_yawn,0.637718,Alert,0,12
+358,D:\driver-drowsiness-detection\dataset\train\yawn\724.jpg,3,yawn,0.63938075,Mild Fatigue,1,12
+359,D:\driver-drowsiness-detection\dataset\train\no_yawn\1004.jpg,2,no_yawn,0.6774999,Alert,0,12
+360,D:\driver-drowsiness-detection\dataset\train\Closed\_607.jpg,0,Open,0.81400234,Alert,0,12
+361,D:\driver-drowsiness-detection\dataset\train\Closed\_380.jpg,0,Closed,0.7788499,Severe Fatigue,2,13
+362,D:\driver-drowsiness-detection\dataset\train\no_yawn\209.jpg,2,no_yawn,0.59739655,Alert,0,13
+363,D:\driver-drowsiness-detection\dataset\train\Closed\_540.jpg,0,Closed,0.99069387,Severe Fatigue,2,13
+364,D:\driver-drowsiness-detection\dataset\train\yawn\479.jpg,3,no_yawn,0.7762272,Alert,0,13
+365,D:\driver-drowsiness-detection\dataset\train\Closed\_656.jpg,0,Closed,0.99914145,Severe Fatigue,2,13
+366,D:\driver-drowsiness-detection\dataset\train\Open\_136.jpg,1,Open,0.9997004,Alert,0,13
+367,D:\driver-drowsiness-detection\dataset\train\Closed\_671.jpg,0,Closed,0.993934,Severe Fatigue,2,13
+368,D:\driver-drowsiness-detection\dataset\train\no_yawn\379.jpg,2,no_yawn,0.66235685,Alert,0,13
+369,D:\driver-drowsiness-detection\dataset\train\Open\_10.jpg,1,Open,0.9993309,Alert,0,13
+370,D:\driver-drowsiness-detection\dataset\train\no_yawn\1736.jpg,2,no_yawn,0.6500227,Alert,0,13
+371,D:\driver-drowsiness-detection\dataset\train\Closed\_344.jpg,0,Closed,0.99257916,Severe Fatigue,2,13
+372,D:\driver-drowsiness-detection\dataset\train\Closed\_187.jpg,0,Closed,0.9900445,Severe Fatigue,2,13
+373,D:\driver-drowsiness-detection\dataset\train\Closed\_650.jpg,0,Closed,0.99981266,Severe Fatigue,2,13
+374,D:\driver-drowsiness-detection\dataset\train\Closed\_347.jpg,0,Closed,0.99778783,Severe Fatigue,2,13
+375,D:\driver-drowsiness-detection\dataset\train\Closed\_434.jpg,0,Closed,0.85294825,Severe Fatigue,2,13
+376,D:\driver-drowsiness-detection\dataset\train\Open\_491.jpg,1,Open,0.99986863,Alert,0,13
+377,D:\driver-drowsiness-detection\dataset\train\Open\_375.jpg,1,Open,0.99568236,Alert,0,13
+378,D:\driver-drowsiness-detection\dataset\train\Closed\_1.jpg,0,Closed,0.9982646,Severe Fatigue,2,13
+379,D:\driver-drowsiness-detection\dataset\train\yawn\717.jpg,3,yawn,0.6963422,Mild Fatigue,1,13
+380,D:\driver-drowsiness-detection\dataset\train\yawn\227.jpg,3,no_yawn,0.63046044,Alert,0,13
+381,D:\driver-drowsiness-detection\dataset\train\Closed\_585.jpg,0,Closed,0.9846414,Severe Fatigue,2,13
+382,D:\driver-drowsiness-detection\dataset\train\Open\_249.jpg,1,Open,0.99774677,Alert,0,13
+383,D:\driver-drowsiness-detection\dataset\train\Open\_14.jpg,1,Open,0.99934727,Alert,0,13
+384,D:\driver-drowsiness-detection\dataset\train\yawn\617.jpg,3,no_yawn,0.5315524,Alert,0,13
+385,D:\driver-drowsiness-detection\dataset\train\yawn\76.jpg,3,yawn,0.8647809,Mild Fatigue,1,13
+386,D:\driver-drowsiness-detection\dataset\train\no_yawn\2580.jpg,2,no_yawn,0.61340696,Alert,0,13
+387,D:\driver-drowsiness-detection\dataset\train\yawn\643.jpg,3,yawn,0.74481547,Mild Fatigue,1,13
+388,D:\driver-drowsiness-detection\dataset\train\Open\_170.jpg,1,Open,0.9577859,Alert,0,13
+389,D:\driver-drowsiness-detection\dataset\train\no_yawn\1129.jpg,2,no_yawn,0.7492906,Alert,0,13
+390,D:\driver-drowsiness-detection\dataset\train\Closed\_340.jpg,0,Closed,0.9914573,Severe Fatigue,2,13
+391,D:\driver-drowsiness-detection\dataset\train\no_yawn\681.jpg,2,no_yawn,0.7291697,Alert,0,14
+392,D:\driver-drowsiness-detection\dataset\train\no_yawn\2244.jpg,2,no_yawn,0.71875,Alert,0,14
+393,D:\driver-drowsiness-detection\dataset\train\no_yawn\1986.jpg,2,no_yawn,0.6637054,Alert,0,14
+394,D:\driver-drowsiness-detection\dataset\train\Closed\_341.jpg,0,Closed,0.9926093,Severe Fatigue,2,14
+395,D:\driver-drowsiness-detection\dataset\train\no_yawn\1118.jpg,2,no_yawn,0.6702085,Alert,0,14
+396,D:\driver-drowsiness-detection\dataset\train\Open\_436.jpg,1,Open,0.99997413,Alert,0,14
+397,D:\driver-drowsiness-detection\dataset\train\Open\_148.jpg,1,Open,0.99994636,Alert,0,14
+398,D:\driver-drowsiness-detection\dataset\train\Closed\_28.jpg,0,Closed,0.9539972,Severe Fatigue,2,14
+399,D:\driver-drowsiness-detection\dataset\train\yawn\656.jpg,3,yawn,0.81014115,Mild Fatigue,1,14
+400,D:\driver-drowsiness-detection\dataset\train\yawn\287.jpg,3,no_yawn,0.7351347,Alert,0,14
+401,D:\driver-drowsiness-detection\dataset\train\no_yawn\1816.jpg,2,no_yawn,0.7284393,Alert,0,14
+402,D:\driver-drowsiness-detection\dataset\train\no_yawn\295.jpg,2,no_yawn,0.68531895,Alert,0,14
+403,D:\driver-drowsiness-detection\dataset\train\no_yawn\1447.jpg,2,no_yawn,0.7442159,Alert,0,14
+404,D:\driver-drowsiness-detection\dataset\train\Open\_502.jpg,1,Open,0.99987566,Alert,0,14
+405,D:\driver-drowsiness-detection\dataset\train\Open\_445.jpg,1,Open,0.9999392,Alert,0,14
+406,D:\driver-drowsiness-detection\dataset\train\Open\_290.jpg,1,Open,0.9993629,Alert,0,14
+407,D:\driver-drowsiness-detection\dataset\train\Closed\_526.jpg,0,Closed,0.9941543,Severe Fatigue,2,14
+408,D:\driver-drowsiness-detection\dataset\train\no_yawn\2581.jpg,2,no_yawn,0.602586,Alert,0,14
+409,D:\driver-drowsiness-detection\dataset\train\no_yawn\2013.jpg,2,no_yawn,0.70885867,Alert,0,14
+410,D:\driver-drowsiness-detection\dataset\train\Open\_695.jpg,1,Open,0.9997396,Alert,0,14
+411,D:\driver-drowsiness-detection\dataset\train\Closed\_459.jpg,0,Closed,0.96353513,Severe Fatigue,2,14
+412,D:\driver-drowsiness-detection\dataset\train\no_yawn\786.jpg,2,no_yawn,0.6402413,Alert,0,14
+413,D:\driver-drowsiness-detection\dataset\train\yawn\441.jpg,3,no_yawn,0.61060613,Alert,0,14
+414,D:\driver-drowsiness-detection\dataset\train\no_yawn\299.jpg,2,no_yawn,0.6776199,Alert,0,14
+415,D:\driver-drowsiness-detection\dataset\train\Open\_166.jpg,1,Open,0.9996773,Alert,0,14
+416,D:\driver-drowsiness-detection\dataset\train\no_yawn\2287.jpg,2,no_yawn,0.5918712,Alert,0,14
+417,D:\driver-drowsiness-detection\dataset\train\Open\_551.jpg,1,Open,0.99993527,Alert,0,14
+418,D:\driver-drowsiness-detection\dataset\train\yawn\497.jpg,3,no_yawn,0.6448999,Alert,0,14
+419,D:\driver-drowsiness-detection\dataset\train\no_yawn\1778.jpg,2,no_yawn,0.632747,Alert,0,14
+420,D:\driver-drowsiness-detection\dataset\train\Open\_168.jpg,1,Open,0.9993461,Alert,0,14
+421,D:\driver-drowsiness-detection\dataset\train\Closed\_23.jpg,0,Closed,0.9936464,Severe Fatigue,2,15
+422,D:\driver-drowsiness-detection\dataset\train\Closed\_276.jpg,0,Closed,0.972561,Severe Fatigue,2,15
+423,D:\driver-drowsiness-detection\dataset\train\Open\_394.jpg,1,Open,0.7984014,Alert,0,15
+424,D:\driver-drowsiness-detection\dataset\train\Open\_56.jpg,1,Open,0.9745095,Alert,0,15
+425,D:\driver-drowsiness-detection\dataset\train\yawn\481.jpg,3,no_yawn,0.79841715,Alert,0,15
+426,D:\driver-drowsiness-detection\dataset\train\yawn\155.jpg,3,yawn,0.8550392,Mild Fatigue,1,15
+427,D:\driver-drowsiness-detection\dataset\train\Open\_101.jpg,1,Open,0.99880636,Alert,0,15
+428,D:\driver-drowsiness-detection\dataset\train\yawn\82.jpg,3,no_yawn,0.69078463,Alert,0,15
+429,D:\driver-drowsiness-detection\dataset\train\no_yawn\179.jpg,2,no_yawn,0.65655863,Alert,0,15
+430,D:\driver-drowsiness-detection\dataset\train\no_yawn\1067.jpg,2,no_yawn,0.6649877,Alert,0,15
+431,D:\driver-drowsiness-detection\dataset\train\no_yawn\1029.jpg,2,no_yawn,0.72859335,Alert,0,15
+432,D:\driver-drowsiness-detection\dataset\train\Closed\_687.jpg,0,Closed,0.99178255,Severe Fatigue,2,15
+433,D:\driver-drowsiness-detection\dataset\train\Open\_387.jpg,1,Open,0.9719821,Alert,0,15
+434,D:\driver-drowsiness-detection\dataset\train\no_yawn\1269.jpg,2,no_yawn,0.6178128,Alert,0,15
+435,D:\driver-drowsiness-detection\dataset\train\Open\_669.jpg,1,Open,0.9848601,Alert,0,15
