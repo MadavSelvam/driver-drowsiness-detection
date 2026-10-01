@@ -1,0 +1,54 @@
+{
+  "model_name": "eye_state_custom_cnn_v2",
+  "input_size": [
+    224,
+    224
+  ],
+  "num_classes": 2,
+  "class_names": [
+    "Closed",
+    "Open"
+  ],
+  "batch_size": 32,
+  "epochs_requested": 40,
+  "epochs_completed": 40,
+  "optimizer": "Adam",
+  "initial_learning_rate": 0.0001,
+  "label_smoothing": 0.0,
+  "augmentation": {
+    "horizontal_flip": true,
+    "rotation_factor": 0.05,
+    "zoom_factor": 0.1,
+    "contrast_factor": 0.1
+  },
+  "dropout": 0.4,
+  "class_weights": {
+    "0": 0.9865384615384616,
+    "1": 1.0138339920948616
+  },
+  "test_metrics": {
+    "accuracy": 0.9626168224299065,
+    "macro_precision": 0.962438853948288,
+    "macro_recall": 0.9634103641456582,
+    "macro_f1": 0.9625874125874125,
+    "weighted_precision": 0.9633286963563812,
+    "weighted_recall": 0.9626168224299065,
+    "weighted_f1": 0.9626364289915692
+  },
+  "confusion_matrix": [
+    [
+      100,
+      2
+    ],
+    [
+      6,
+      106
+    ]
+  ],
+  "confidence": {
+    "mean": 0.9435665011405945,
+    "median": 0.9837179183959961,
+    "min": 0.5016489624977112,
+    "max": 0.9998940229415894
+  }
+}

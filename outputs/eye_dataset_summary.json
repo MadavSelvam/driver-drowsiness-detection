@@ -1,0 +1,31 @@
+{
+  "task": "Eye State Classification",
+  "classes": [
+    "Closed",
+    "Open"
+  ],
+  "total_images": 1452,
+  "image_size": [
+    224,
+    224
+  ],
+  "splits": {
+    "train": 1026,
+    "validation": 212,
+    "test": 214
+  },
+  "class_counts": {
+    "Closed": 726,
+    "Open": 726
+  },
+  "similarity_group_leaks": 0,
+  "augmentation": {
+    "rotation": "small rotation",
+    "zoom": "small zoom",
+    "horizontal_flip": true,
+    "brightness": "small brightness variation",
+    "applies_to": "training only",
+    "validation_augmented": false,
+    "test_augmented": false
+  }
+}

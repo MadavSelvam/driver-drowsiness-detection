@@ -1,0 +1,9 @@
+{
+  "history_size": 15,
+  "severe_closed_count": 3,
+  "mild_yawn_count": 3,
+  "severe_ratio": 0.5,
+  "mild_ratio": 0.4,
+  "severe_window": 5,
+  "mild_window": 7
+}

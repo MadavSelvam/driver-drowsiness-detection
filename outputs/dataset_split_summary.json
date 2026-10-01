@@ -1,0 +1,20 @@
+{
+  "seed": 42,
+  "total_images": 2900,
+  "similarity_groups": 2513,
+  "splits": {
+    "train": {
+      "images": 2030,
+      "percentage": 70.0
+    },
+    "validation": {
+      "images": 435,
+      "percentage": 15.0
+    },
+    "test": {
+      "images": 435,
+      "percentage": 15.0
+    }
+  },
+  "leaking_similarity_groups": 0
+}

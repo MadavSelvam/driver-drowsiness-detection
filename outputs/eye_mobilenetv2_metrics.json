@@ -1,0 +1,24 @@
+{
+  "model": "Eye MobileNetV2",
+  "classes": [
+    "Closed",
+    "Open"
+  ],
+  "image_size": [
+    224,
+    224
+  ],
+  "stage_1_epochs_requested": 15,
+  "stage_1_epochs_completed": 8,
+  "stage_2_epochs_requested": 15,
+  "stage_2_epochs_completed": 14,
+  "stage_1_training_minutes": 3.755,
+  "stage_2_training_minutes": 8.042,
+  "total_training_minutes": 11.797,
+  "test_accuracy": 1.0,
+  "test_precision_weighted": 1.0,
+  "test_recall_weighted": 1.0,
+  "test_f1_weighted": 1.0,
+  "mean_prediction_confidence": 0.999843,
+  "median_prediction_confidence": 1.0
+}

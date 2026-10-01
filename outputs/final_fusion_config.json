@@ -1,0 +1,33 @@
+{
+  "eye_model": {
+    "name": "Eye MobileNetV2",
+    "path": "d:\\driver-drowsiness-detection\\models\\eye_mobilenetv2_best.keras",
+    "classes": [
+      "Closed",
+      "Open"
+    ]
+  },
+  "mouth_model": {
+    "name": "Mouth MobileNetV2",
+    "path": "d:\\driver-drowsiness-detection\\models\\mouth_mobilenetv2_best.keras",
+    "classes": [
+      "no_yawn",
+      "yawn"
+    ]
+  },
+  "confidence_threshold": 0.75,
+  "outputs": [
+    "Alert",
+    "Mild Fatigue",
+    "Severe Fatigue",
+    "Uncertain"
+  ],
+  "decision_rules": {
+    "closed_eye": "Severe Fatigue",
+    "open_eye_yawn": "Mild Fatigue",
+    "open_eye_no_yawn": "Alert",
+    "insufficient_or_conflicting_confidence": "Uncertain"
+  },
+  "end_to_end_fusion_accuracy": null,
+  "end_to_end_fusion_note": "Requires paired eye+mouth ground truth from the same frames."
+}

@@ -1,19 +1,21 @@
-# Virtual environment
+# Python
 venv/
-
-# Python cache
 __pycache__/
-*.py[cod]
-
-# Jupyter checkpoints
+*.pyc
 .ipynb_checkpoints/
 
-# Dataset
+# Datasets
 dataset/
+dataset_split/
+eye_dataset/
+mouth_dataset/
 
-# VS Code
-.vscode/
+# Generated/test files
+*.mp4
+*.avi
+*.mov
+*.mkv
 
-# OS files
+# Temporary files
 .DS_Store
 Thumbs.db

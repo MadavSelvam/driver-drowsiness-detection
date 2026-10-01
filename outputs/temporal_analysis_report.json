@@ -1,0 +1,26 @@
+{
+  "temporal_accuracy": null,
+  "evaluation_status": "Logic validated with controlled sequences; no paired labeled video dataset is available for measured temporal accuracy.",
+  "tests": {
+    "stable_alert": true,
+    "isolated_yawn": true,
+    "persistent_yawn": true,
+    "persistent_closed_eyes": true,
+    "closed_eye_plus_yawn": true,
+    "uncertain_observations": true
+  },
+  "configuration": {
+    "history_size": 15,
+    "severe_closed_count": 3,
+    "mild_yawn_count": 3,
+    "severe_ratio": 0.5,
+    "mild_ratio": 0.4,
+    "severe_window": 5,
+    "mild_window": 7
+  },
+  "progression_demo": [
+    "Alert",
+    "Mild Fatigue",
+    "Severe Fatigue"
+  ]
+}

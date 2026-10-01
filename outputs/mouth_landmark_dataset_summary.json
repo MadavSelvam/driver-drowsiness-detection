@@ -1,0 +1,18 @@
+{
+  "task": "Mouth State Classification",
+  "preprocessing_method": "MediaPipe Face Landmarks",
+  "classes": [
+    "no_yawn",
+    "yawn"
+  ],
+  "source_images": 1448,
+  "successful_mouth_crops": 1429,
+  "failed_or_uncertain": 19,
+  "success_rate_percent": 98.69,
+  "image_size": [
+    224,
+    224
+  ],
+  "similarity_group_leaks": 0,
+  "processing_minutes": 0.422
+}

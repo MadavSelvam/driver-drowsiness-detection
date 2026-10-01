@@ -1,0 +1,55 @@
+{
+  "task": "Mouth State Classification",
+  "classes": [
+    "no_yawn",
+    "yawn"
+  ],
+  "image_size": [
+    224,
+    224
+  ],
+  "batch_size": 32,
+  "training_counts": {
+    "no_yawn": 500,
+    "yawn": 504
+  },
+  "class_weights": {
+    "0": 1.004,
+    "1": 0.996031746031746
+  },
+  "custom_cnn": {
+    "accuracy": 0.5339366515837104,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "confusion_matrix": [
+      [
+        118,
+        0
+      ],
+      [
+        103,
+        0
+      ]
+    ],
+    "training_minutes": 10.221884107589721
+  },
+  "mobilenetv2": {
+    "accuracy": 0.9773755656108597,
+    "precision": 1.0,
+    "recall": 0.9514563106796117,
+    "f1": 0.9751243781094527,
+    "confusion_matrix": [
+      [
+        118,
+        0
+      ],
+      [
+        5,
+        98
+      ]
+    ],
+    "stage1_minutes": 4.301934500535329,
+    "stage2_minutes": 8.908016868432362
+  }
+}
