@@ -1,6 +1,5 @@
 
 import json
-from collections import deque
 from pathlib import Path
 
 import cv2
@@ -33,7 +32,6 @@ MOUTH_MODEL_PATH = MODEL_DIR / "mouth_mobilenetv2_best.keras"
 LANDMARK_MODEL_PATH = PROJECT_ROOT / "face_landmarker.task"
 
 FUSION_CONFIG_PATH = OUTPUT_DIR / "final_fusion_config.json"
-TEMPORAL_CONFIG_PATH = OUTPUT_DIR / "temporal_fatigue_config.json"
 
 IMG_SIZE = (224, 224)
 DEFAULT_CONFIDENCE_THRESHOLD = 0.75
@@ -72,7 +70,6 @@ def load_json(path):
 
 
 fusion_config = load_json(FUSION_CONFIG_PATH)
-temporal_config_file = load_json(TEMPORAL_CONFIG_PATH)
 
 CONFIDENCE_THRESHOLD = float(
     fusion_config.get(
@@ -80,17 +77,6 @@ CONFIDENCE_THRESHOLD = float(
         DEFAULT_CONFIDENCE_THRESHOLD,
     )
 )
-
-TEMPORAL_CONFIG = {
-    "history_size": 15,
-    "severe_closed_count": 3,
-    "mild_yawn_count": 3,
-    "severe_ratio": 0.50,
-    "mild_ratio": 0.40,
-    "severe_window": 5,
-    "mild_window": 7,
-    **temporal_config_file,
-}
 
 
 # ============================================================
@@ -156,152 +142,7 @@ except Exception as exc:
 
 
 # ============================================================
-# 4. TEMPORAL ANALYZER
-# ============================================================
-
-class TemporalFatigueAnalyzer:
-
-    def __init__(self, config):
-        self.config = config
-        self.history = deque(
-            maxlen=int(config["history_size"])
-        )
-
-    def reset(self):
-        self.history.clear()
-
-    def add_observation(self, observation):
-
-        self.history.append(observation)
-
-        severe_window = list(self.history)[
-            -int(self.config["severe_window"]):
-        ]
-
-        mild_window = list(self.history)[
-            -int(self.config["mild_window"]):
-        ]
-
-        closed_count = sum(
-            1
-            for item in severe_window
-            if (
-                item["eye_state"] == "Closed"
-                and item["eye_confidence"]
-                >= CONFIDENCE_THRESHOLD
-            )
-        )
-
-        yawn_count = sum(
-            1
-            for item in mild_window
-            if (
-                item["mouth_state"] == "yawn"
-                and item["mouth_confidence"]
-                >= CONFIDENCE_THRESHOLD
-            )
-        )
-
-        closed_ratio = (
-            closed_count / len(severe_window)
-            if severe_window
-            else 0.0
-        )
-
-        yawn_ratio = (
-            yawn_count / len(mild_window)
-            if mild_window
-            else 0.0
-        )
-
-        if (
-            closed_count
-            >= self.config["severe_closed_count"]
-            and closed_ratio
-            >= self.config["severe_ratio"]
-        ):
-            state = "Severe Fatigue"
-            reason = (
-                "Repeated confident closed-eye "
-                "observations detected."
-            )
-
-        elif (
-            yawn_count
-            >= self.config["mild_yawn_count"]
-            and yawn_ratio
-            >= self.config["mild_ratio"]
-        ):
-            state = "Mild Fatigue"
-            reason = (
-                "Repeated confident yawn "
-                "observations detected."
-            )
-
-        else:
-            recent_states = [
-                item["fatigue_state"]
-                for item in list(self.history)[-3:]
-            ]
-
-            if (
-                len(recent_states) == 3
-                and all(
-                    state == "Alert"
-                    for state in recent_states
-                )
-            ):
-                state = "Alert"
-                reason = (
-                    "Recent observations consistently "
-                    "indicate alert state."
-                )
-            else:
-                state = "Uncertain"
-                reason = (
-                    "Evidence is not persistent enough "
-                    "for temporal fatigue escalation."
-                )
-
-        return {
-            "fatigue_state": state,
-            "reason": reason,
-            "history_length": len(self.history),
-            "closed_count": closed_count,
-            "yawn_count": yawn_count,
-            "closed_ratio": round(closed_ratio, 4),
-            "yawn_ratio": round(yawn_ratio, 4),
-        }
-
-
-# ============================================================
-# 5. SESSION STATE
-# ============================================================
-
-if "temporal_analyzer" not in st.session_state:
-    st.session_state.temporal_analyzer = (
-        TemporalFatigueAnalyzer(TEMPORAL_CONFIG)
-    )
-
-if "frame_counter" not in st.session_state:
-    st.session_state.frame_counter = 0
-
-if "last_result" not in st.session_state:
-    st.session_state.last_result = None
-
-if "history_records" not in st.session_state:
-    st.session_state.history_records = []
-
-
-def reset_analysis():
-    st.session_state.temporal_analyzer.reset()
-    st.session_state.frame_counter = 0
-    st.session_state.last_result = None
-    st.session_state.history_records = []
-
-
-# ============================================================
-# 6. FACE LANDMARK DETECTION
+# 4. FACE LANDMARK DETECTION
 # ============================================================
 
 def detect_landmarks(image_rgb):
@@ -743,57 +584,30 @@ def confidence_aware_fusion(
 
 
 # ============================================================
-# 14. PROCESS ONE FRAME
+# 14. PROCESS ONE IMAGE
 # ============================================================
 
-def process_frame(
-    image_rgb,
-    frame_number,
-    use_temporal=True,
-):
+def process_image(image_rgb):
+    """Run single-image eye + mouth analysis and confidence-aware fusion."""
 
-    landmarks = detect_landmarks(
-        image_rgb
-    )
-
+    landmarks = detect_landmarks(image_rgb)
     annotated = image_rgb.copy()
 
     if landmarks is None:
-
-        observation = {
-            "frame": frame_number,
-            "fatigue_state": "Uncertain",
-            "eye_state": "Uncertain",
-            "mouth_state": "Unavailable",
-            "eye_confidence": 0.0,
-            "mouth_confidence": 0.0,
-        }
-
-        if use_temporal:
-            temporal = (
-                st.session_state.temporal_analyzer
-                .add_observation(
-                    observation
-                )
-            )
-        else:
-            temporal = {
-                "fatigue_state": "Uncertain",
-                "reason": "No face detected.",
-                "history_length": 0,
-                "closed_count": 0,
-                "yawn_count": 0,
-                "closed_ratio": 0.0,
-                "yawn_ratio": 0.0,
-            }
-
-        observation["temporal_state"] = (
-            temporal["fatigue_state"]
-        )
-
         return {
-            "observation": observation,
-            "temporal": temporal,
+            "fatigue_state": "Uncertain",
+            "reason": "No face detected in the uploaded image.",
+            "eye_result": {
+                "state": "Uncertain",
+                "confidence": 0.0,
+                "left": None,
+                "right": None,
+            },
+            "mouth_result": {
+                "state": "Unavailable",
+                "confidence": 0.0,
+                "yawn_probability": 0.0,
+            },
             "annotated": annotated,
             "left_eye_crop": None,
             "right_eye_crop": None,
@@ -801,27 +615,21 @@ def process_frame(
             "face_detected": False,
         }
 
-    eye_rois = extract_eye_rois(
-        image_rgb,
-        landmarks,
-    )
+    eye_rois = extract_eye_rois(image_rgb, landmarks)
 
     left_crop = eye_rois["left_crop"]
     right_crop = eye_rois["right_crop"]
 
-    if left_crop is not None:
-        left_eye_result = predict_single_eye(
-            left_crop
-        )
-    else:
-        left_eye_result = None
-
-    if right_crop is not None:
-        right_eye_result = predict_single_eye(
-            right_crop
-        )
-    else:
-        right_eye_result = None
+    left_eye_result = (
+        predict_single_eye(left_crop)
+        if left_crop is not None
+        else None
+    )
+    right_eye_result = (
+        predict_single_eye(right_crop)
+        if right_crop is not None
+        else None
+    )
 
     eye_result = combine_eye_predictions(
         left_eye_result,
@@ -834,13 +642,12 @@ def process_frame(
     )
 
     if mouth_crop is not None:
-        mouth_result = predict_mouth(
-            mouth_crop
-        )
+        mouth_result = predict_mouth(mouth_crop)
     else:
         mouth_result = {
             "state": "Unavailable",
             "confidence": 0.0,
+            "yawn_probability": 0.0,
         }
 
     fusion_result = confidence_aware_fusion(
@@ -848,75 +655,11 @@ def process_frame(
         mouth_result,
     )
 
-    observation = {
-        "frame": frame_number,
-        "fatigue_state": fusion_result[
-            "fatigue_state"
-        ],
-        "eye_state": eye_result["state"],
-        "mouth_state": mouth_result["state"],
-        "eye_confidence": eye_result[
-            "confidence"
-        ],
-        "mouth_confidence": mouth_result[
-            "confidence"
-        ],
-    }
-
-    if use_temporal:
-        temporal = (
-            st.session_state.temporal_analyzer
-            .add_observation(
-                observation
-            )
-        )
-    else:
-        temporal = {
-            "fatigue_state": fusion_result[
-                "fatigue_state"
-            ],
-            "reason": fusion_result[
-                "reason"
-            ],
-            "history_length": 1,
-            "closed_count": (
-                1
-                if eye_result["state"] == "Closed"
-                else 0
-            ),
-            "yawn_count": (
-                1
-                if mouth_result["state"] == "yawn"
-                else 0
-            ),
-            "closed_ratio": (
-                1.0
-                if eye_result["state"] == "Closed"
-                else 0.0
-            ),
-            "yawn_ratio": (
-                1.0
-                if mouth_result["state"] == "yawn"
-                else 0.0
-            ),
-        }
-
-    observation["temporal_state"] = (
-        temporal["fatigue_state"]
-    )
-
     # Draw eye boxes.
     for box, label in [
-        (
-            eye_rois["left_box"],
-            "Left Eye",
-        ),
-        (
-            eye_rois["right_box"],
-            "Right Eye",
-        ),
+        (eye_rois["left_box"], "Left Eye"),
+        (eye_rois["right_box"], "Right Eye"),
     ]:
-
         if box is None:
             continue
 
@@ -943,7 +686,6 @@ def process_frame(
 
     # Draw mouth box.
     if mouth_box is not None:
-
         x1, y1, x2, y2 = mouth_box
 
         cv2.rectangle(
@@ -965,13 +707,9 @@ def process_frame(
             cv2.LINE_AA,
         )
 
-    # Overlay prediction.
     cv2.putText(
         annotated,
-        (
-            f"Eyes: {eye_result['state']} "
-            f"({eye_result['confidence']:.2f})"
-        ),
+        f"Eyes: {eye_result['state']} ({eye_result['confidence']:.2f})",
         (20, 32),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.72,
@@ -982,10 +720,7 @@ def process_frame(
 
     cv2.putText(
         annotated,
-        (
-            f"Mouth: {mouth_result['state']} "
-            f"({mouth_result['confidence']:.2f})"
-        ),
+        f"Mouth: {mouth_result['state']} ({mouth_result['confidence']:.2f})",
         (20, 64),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.72,
@@ -996,10 +731,7 @@ def process_frame(
 
     cv2.putText(
         annotated,
-        (
-            f"State: "
-            f"{temporal['fatigue_state']}"
-        ),
+        f"State: {fusion_result['fatigue_state']}",
         (20, 98),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.80,
@@ -1009,8 +741,10 @@ def process_frame(
     )
 
     return {
-        "observation": observation,
-        "temporal": temporal,
+        "fatigue_state": fusion_result["fatigue_state"],
+        "reason": fusion_result["reason"],
+        "eye_result": eye_result,
+        "mouth_result": mouth_result,
         "annotated": annotated,
         "left_eye_crop": left_crop,
         "right_eye_crop": right_crop,
@@ -1024,57 +758,37 @@ def process_frame(
 # ============================================================
 
 def state_icon(state):
-
     return {
         "Alert": "🟢",
         "Mild Fatigue": "🟡",
         "Severe Fatigue": "🔴",
         "Uncertain": "⚪",
-    }.get(
-        state,
-        "⚪",
-    )
+    }.get(state, "⚪")
 
 
-def display_result(
-    result,
-    show_temporal=True,
-):
-
-    observation = result["observation"]
-    temporal = result["temporal"]
-
-    final_state = (
-        temporal["fatigue_state"]
-    )
+def display_result(result):
+    final_state = result["fatigue_state"]
 
     st.markdown(
-        f"# {state_icon(final_state)} "
-        f"{final_state}"
+        f"# {state_icon(final_state)} {final_state}"
     )
 
-    st.caption(
-        temporal["reason"]
-    )
+    st.caption(result["reason"])
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
         st.metric(
             "Eye State",
-            observation["eye_state"],
-            (
-                f"{observation['eye_confidence']:.1%}"
-            ),
+            result["eye_result"]["state"],
+            f"{result['eye_result']['confidence']:.1%}",
         )
 
     with col2:
         st.metric(
             "Mouth State",
-            observation["mouth_state"],
-            (
-                f"{observation['mouth_confidence']:.1%}"
-            ),
+            result["mouth_result"]["state"],
+            f"{result['mouth_result']['confidence']:.1%}",
         )
 
     with col3:
@@ -1083,60 +797,28 @@ def display_result(
             f"{CONFIDENCE_THRESHOLD:.0%}",
         )
 
-    if show_temporal:
-
-        t1, t2, t3, t4 = st.columns(4)
-
-        with t1:
-            st.metric(
-                "History",
-                temporal["history_length"],
-            )
-
-        with t2:
-            st.metric(
-                "Closed Eyes",
-                temporal["closed_count"],
-            )
-
-        with t3:
-            st.metric(
-                "Yawns",
-                temporal["yawn_count"],
-            )
-
-        with t4:
-            st.metric(
-                "Frame",
-                observation["frame"],
-            )
-
 
 # ============================================================
 # 16. APPLICATION HEADER
 # ============================================================
 
-st.title(
-    "🚗 Driver Drowsiness Detection"
-)
+st.title("🚗 Driver Drowsiness Detection")
 
 st.markdown(
     "### Eye Closure + Yawning Analysis with Deep Learning"
 )
 
 st.write(
-    "The application uses separate eye and mouth regions, "
-    "MobileNetV2 models, confidence-aware fusion, and "
-    "temporal fatigue analysis."
+    "Upload a driver image to analyze eye closure and yawning "
+    "using MediaPipe facial landmarks, MobileNetV2 models, "
+    "and confidence-aware fusion."
 )
 
 if not models_loaded:
-
     st.error(
         "Models could not be loaded.\n\n"
         + load_error
     )
-
     st.stop()
 
 st.success(
@@ -1149,27 +831,11 @@ st.success(
 # ============================================================
 
 with st.sidebar:
-
     st.header("⚙️ Configuration")
 
     st.metric(
         "Confidence Threshold",
         f"{CONFIDENCE_THRESHOLD:.0%}",
-    )
-
-    st.metric(
-        "Temporal History",
-        TEMPORAL_CONFIG["history_size"],
-    )
-
-    st.metric(
-        "Severe Window",
-        TEMPORAL_CONFIG["severe_window"],
-    )
-
-    st.metric(
-        "Mild Window",
-        TEMPORAL_CONFIG["mild_window"],
     )
 
     st.divider()
@@ -1182,97 +848,84 @@ with st.sidebar:
 
     st.write("**Eye ROI**")
     st.caption(
-        "Each eye is detected separately using "
-        "MediaPipe facial landmarks before "
-        "classification."
+        "Each eye is detected separately using MediaPipe "
+        "facial landmarks before classification."
     )
 
-    st.divider()
-
-    if st.button(
-        "🔄 Reset Analysis",
-        use_container_width=True,
-    ):
-        reset_analysis()
-        st.rerun()
-
 
 # ============================================================
-# 18. INPUT MODE
+# 18. IMAGE UPLOAD
 # ============================================================
 
-mode = st.radio(
-    "Select input",
-    [
-        "📷 Camera Snapshot",
-        "🖼️ Image Upload",
-    ],
-    horizontal=True,
+st.subheader("🖼️ Single Image Analysis")
+
+st.info(
+    "Upload one driver image. The application detects the face, "
+    "extracts the eye and mouth regions, predicts eye closure "
+    "and yawning, and combines the results using a "
+    "confidence-aware fusion rule."
 )
 
+uploaded_image = st.file_uploader(
+    "Upload a driver image",
+    type=["jpg", "jpeg", "png"],
+)
 
-# ============================================================
-# 19. CAMERA SNAPSHOT
-# ============================================================
+if uploaded_image is not None:
+    image = Image.open(uploaded_image).convert("RGB")
+    image_rgb = np.asarray(image)
 
-if mode == "📷 Camera Snapshot":
-
-    st.subheader(
-        "Camera Snapshot"
+    st.image(
+        image,
+        caption="Uploaded driver image",
+        use_container_width=True,
     )
 
-    camera_image = st.camera_input(
-        "Take a picture"
-    )
+    if st.button(
+        "Analyze Image",
+        type="primary",
+        use_container_width=True,
+    ):
+        with st.spinner("Analyzing image..."):
+            result = process_image(image_rgb)
 
-    if camera_image is not None:
+        st.session_state["last_result"] = result
 
-        image = Image.open(
-            camera_image
-        ).convert("RGB")
+    if st.session_state.get("last_result") is not None:
+        result = st.session_state["last_result"]
 
-        image_rgb = np.asarray(
-            image
-        )
-
-        st.session_state.frame_counter += 1
-
-        result = process_frame(
-            image_rgb,
-            st.session_state.frame_counter,
-            use_temporal=True,
-        )
-
-        st.session_state.last_result = result
-
-        st.session_state.history_records.append(
-            result["observation"]
-        )
+        st.divider()
+        st.subheader("Analysis Result")
 
         col1, col2 = st.columns(2)
 
         with col1:
             st.image(
                 result["annotated"],
-                caption="Processed frame",
+                caption="Detected facial regions and prediction",
                 use_container_width=True,
             )
 
         with col2:
+            st.subheader("Detected Regions")
 
-            if result["left_eye_crop"] is not None:
-                st.image(
-                    result["left_eye_crop"],
-                    caption="Left eye ROI",
-                    use_container_width=True,
-                )
+            eye_col1, eye_col2 = st.columns(2)
 
-            if result["right_eye_crop"] is not None:
-                st.image(
-                    result["right_eye_crop"],
-                    caption="Right eye ROI",
-                    use_container_width=True,
-                )
+            with eye_col1:
+                if result["left_eye_crop"] is not None:
+                    st.image(
+                        result["left_eye_crop"],
+                        caption="Left Eye ROI",
+                        use_container_width=True,
+                    )
+
+            with eye_col2:
+                if result["right_eye_crop"] is not None:
+                    st.image(
+                        result["right_eye_crop"],
+                        caption="Right Eye ROI",
+                        use_container_width=True,
+                    )
 
             if result["mouth_crop"] is not None:
                 st.image(
@@ -1281,192 +934,11 @@ if mode == "📷 Camera Snapshot":
                     use_container_width=True,
                 )
 
-        display_result(
-            result,
-            show_temporal=True,
-        )
+        display_result(result)
 
 
 # ============================================================
-# 20. IMAGE UPLOAD
-# ============================================================
-
-elif mode == "🖼️ Image Upload":
-
-    st.subheader(
-        "Single Image Analysis"
-    )
-
-    st.info(
-        "Single images use direct eye + mouth fusion. "
-        "Temporal escalation is reserved for sequences."
-    )
-
-    uploaded_image = st.file_uploader(
-        "Upload a driver image",
-        type=[
-            "jpg",
-            "jpeg",
-            "png",
-        ],
-    )
-
-    if uploaded_image is not None:
-
-        image = Image.open(
-            uploaded_image
-        ).convert("RGB")
-
-        image_rgb = np.asarray(
-            image
-        )
-
-        if st.button(
-            "Analyze Image",
-            type="primary",
-        ):
-
-            # Single-image analysis should not carry over
-            # history from a previous camera session.
-            st.session_state.temporal_analyzer.reset()
-            st.session_state.history_records = []
-
-            st.session_state.frame_counter += 1
-
-            result = process_frame(
-                image_rgb,
-                st.session_state.frame_counter,
-                use_temporal=False,
-            )
-
-            st.session_state.last_result = result
-
-            st.session_state.history_records = [
-                result["observation"]
-            ]
-
-        if st.session_state.last_result is not None:
-
-            result = (
-                st.session_state.last_result
-            )
-
-            col1, col2 = st.columns(2)
-
-            with col1:
-                st.image(
-                    result["annotated"],
-                    caption="Processed frame",
-                    use_container_width=True,
-                )
-
-            with col2:
-
-                eye_col1, eye_col2 = st.columns(2)
-
-                with eye_col1:
-                    if (
-                        result["left_eye_crop"]
-                        is not None
-                    ):
-                        st.image(
-                            result["left_eye_crop"],
-                            caption="Left eye ROI",
-                            use_container_width=True,
-                        )
-
-                with eye_col2:
-                    if (
-                        result["right_eye_crop"]
-                        is not None
-                    ):
-                        st.image(
-                            result["right_eye_crop"],
-                            caption="Right eye ROI",
-                            use_container_width=True,
-                        )
-
-                if result["mouth_crop"] is not None:
-                    st.image(
-                        result["mouth_crop"],
-                        caption="Mouth ROI",
-                        use_container_width=True,
-                    )
-
-            display_result(
-                result,
-                show_temporal=False,
-            )
-
-
-# ============================================================
-# 21. TEMPORAL HISTORY
-# ============================================================
-
-if (
-    mode != "🖼️ Image Upload"
-    and st.session_state.history_records
-):
-
-    st.divider()
-
-    st.subheader(
-        "📈 Fatigue Progression"
-    )
-
-    history = (
-        st.session_state.history_records
-    )
-
-    state_values = {
-        "Alert": 0,
-        "Mild Fatigue": 1,
-        "Severe Fatigue": 2,
-        "Uncertain": np.nan,
-    }
-
-    chart_df = pd.DataFrame(
-        {
-            "Frame": [
-                item["frame"]
-                for item in history
-            ],
-            "Fatigue Level": [
-                state_values.get(
-                    item.get(
-                        "temporal_state",
-                        item["fatigue_state"],
-                    ),
-                    np.nan,
-                )
-                for item in history
-            ],
-        }
-    )
-
-    st.line_chart(
-        chart_df,
-        x="Frame",
-        y="Fatigue Level",
-    )
-
-    st.caption(
-        "0 = Alert, 1 = Mild Fatigue, "
-        "2 = Severe Fatigue. Uncertain observations "
-        "are not forced into a fatigue level."
-    )
-
-    with st.expander(
-        "View frame-level observations"
-    ):
-        st.dataframe(
-            history,
-            use_container_width=True,
-        )
-
-
-# ============================================================
-# 22. FOOTER
+# 19. FOOTER
 # ============================================================
 
 st.divider()
@@ -1475,5 +947,5 @@ st.caption(
     "Driver Drowsiness Detection | "
     "Eye ROI + Mouth ROI | "
     "MobileNetV2 + MediaPipe Face Landmarks + "
-    "Confidence-Aware Fusion + Temporal Analysis"
+    "Confidence-Aware Fusion"
 )
