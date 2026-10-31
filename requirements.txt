@@ -9,3 +9,4 @@ opencv-python-headless
 jupyter
 ipykernel
 av
+mediapipe
