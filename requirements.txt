@@ -10,3 +10,4 @@ jupyter
 ipykernel
 av
 mediapipe
+streamlit-webrtc
